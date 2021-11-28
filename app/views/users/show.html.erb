@@ -1,17 +1,10 @@
-<h1>プロフィール</h1>
-
-<p>
+<div class="card col-sm-6 mx-auto mt-5">
   <% if @user.avatar.attached? %>
-    <%= image_tag @user.avatar %>
+    <%= image_tag @user.avatar, class: "card-img-top" %>
   <% end %>
-</p>
-
-<h2>名前</h2>
-<%= @user.name %>
-
-<h3>年齢</h3>
-<%= @user.age %>
-
-<h4>メールアドレス</h4>
-
-<%= @user.email %> 
+  <div class="card-body">
+    <h5 class="card-title"><%= @user.name %></h5>
+    <h6 class="card-subtitle text-muted"><%= @user.age %>才</h6>
+    <p class="card-text"><%= @user.email %></p>
+  </div>
+</div>
