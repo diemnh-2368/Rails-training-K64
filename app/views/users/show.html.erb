@@ -1,5 +1,12 @@
 
 <h1>プロフィール</h1>
+
+<p>
+ <% if current_user.avatar.attached? %>
+   <%= image_tag current_user.avatar %>
+ <% end %>
+</p>
+
 <h3>メールアドレス：
   <%= current_user.email %>
 </h3>
@@ -11,3 +18,4 @@
 <h3>年齢：
   <%= current_user.age %>
 </h3>
+
